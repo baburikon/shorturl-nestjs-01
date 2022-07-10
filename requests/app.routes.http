@@ -1,0 +1,60 @@
+### shorten 1
+
+# @no-cookie-jar
+POST http://localhost:3000/api/v1/shorten
+Content-Type: application/json;charset=UTF-8
+
+{
+  "longUrl": "https://habr.com/ru/post/472754/"
+}
+
+### shorten 2
+
+# @no-cookie-jar
+POST http://localhost:3000/api/v1/shorten
+Content-Type: application/json;charset=UTF-8
+
+{
+  "longUrl": "https://node-postgres.com/"
+}
+
+### shorten with customHashOfUrl
+
+# @no-cookie-jar
+POST http://localhost:3000/api/v1/shorten
+Content-Type: application/json;charset=UTF-8
+
+{
+  "longUrl": "https://www.npmjs.com/package/base62",
+  "customHashOfUrl": "base62"
+}
+
+### shorten with customHashOfUrl
+
+# @no-cookie-jar
+POST http://localhost:3000/api/v1/shorten
+Content-Type: application/json;charset=UTF-8
+
+{
+  "longUrl": "https://docs.nestjs.com/",
+  "customHashOfUrl": "g9"
+}
+
+### main
+
+# @no-cookie-jar
+GET http://localhost:3000/
+
+### redirect 1
+
+# @no-cookie-jar
+# @no-redirect
+GET http://localhost:3000/g8
+
+### redirect 2
+
+# @no-cookie-jar
+# @no-redirect
+GET http://localhost:3000/base62
+
+###
