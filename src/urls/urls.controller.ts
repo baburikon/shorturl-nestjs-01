@@ -44,7 +44,6 @@ export class UrlsController {
       try {
         longUrl = await this.urlsService.findLongUrl(hashOfUrl);
       } catch (e) {
-        return e;
         throw new HttpException('URL not found by hash', HttpStatus.NOT_FOUND);
       }
       await this.cacheManager.set(hashOfUrl, longUrl, { ttl: 1000 });
